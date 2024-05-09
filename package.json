@@ -1,22 +1,21 @@
 {
-  "name": "@sayahoyahoy/scotty-lib-starter",
+  "name": "@sayahoyahoy/eslint-config",
   "type": "module",
-  "version": "2.2.1",
+  "version": "0.0.1",
   "packageManager": "pnpm@9.1.0",
   "author": "tom",
   "keywords": [],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -30,31 +29,76 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "lint": "eslint .",
-    "prepublishOnly": "nr build",
-    "start": "esno src/index.ts",
-    "test": "vitest",
+    "build": "tsup src/index.ts --format esm,cjs --clean --dts",
+    "stub": "tsup src/index.ts --format esm",
+    "dev": "tsup src/index.ts --format esm,cjs --watch & eslint-flat-config-viewer",
+    "lint": "pnpm run stub && eslint .",
+    "prepack": "nr build",
+    "test": "echo \"no test specified\" && exit 1",
     "typecheck": "tsc --noEmit",
     "release": "bumpp"
   },
+  "peerDependencies": {
+    "@eslint-react/eslint-plugin": "^1.5.8",
+    "@unocss/eslint-plugin": ">=0.50.0",
+    "astro-eslint-parser": "^0.16.3",
+    "eslint": ">=8.40.0",
+    "eslint-plugin-astro": "^0.31.4",
+    "eslint-plugin-format": ">=0.1.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "eslint-plugin-solid": "^0.13.2",
+    "eslint-plugin-svelte": ">=2.35.1",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-slidev": "^1.0.5",
+    "svelte-eslint-parser": "^0.33.1"
+  },
+  "peerDependenciesMeta": {
+    "@eslint-react/eslint-plugin": {
+      "optional": true
+    },
+    "@unocss/eslint-plugin": {
+      "optional": true
+    },
+    "astro-eslint-parser": {
+      "optional": true
+    },
+    "eslint-plugin-astro": {
+      "optional": true
+    },
+    "eslint-plugin-format": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "eslint-plugin-react-refresh": {
+      "optional": true
+    },
+    "eslint-plugin-solid": {
+      "optional": true
+    },
+    "eslint-plugin-svelte": {
+      "optional": true
+    },
+    "prettier-plugin-astro": {
+      "optional": true
+    },
+    "prettier-plugin-slidev": {
+      "optional": true
+    },
+    "svelte-eslint-parser": {
+      "optional": true
+    }
+  },
   "dependencies": {
+    "@antfu/eslint-config": "^2.16.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.14.0",
-    "@antfu/ni": "^0.21.12",
-    "@antfu/utils": "^0.7.7",
-    "@types/node": "^20.12.7",
-    "bumpp": "^9.4.0",
-    "eslint": "^9.0.0",
-    "esno": "^4.7.0",
-    "pnpm": "^9.0.2",
-    "rimraf": "^5.0.5",
-    "simple-git-hooks": "^2.11.1",
-    "typescript": "^5.4.5",
-    "unbuild": "^2.0.0",
-    "vite": "^5.2.9",
-    "vitest": "^1.5.0"
+    "bundle-require": "^4.1.0",
+    "eslint-flat-config-utils": "^0.2.4",
+    "eslint-flat-config-viewer": "^0.1.20",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
   }
 }
