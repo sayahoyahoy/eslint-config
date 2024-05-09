@@ -95,6 +95,7 @@
     "@antfu/eslint-config": "^2.16.1"
   },
   "devDependencies": {
+    "bumpp": "^9.4.1",
     "bundle-require": "^4.1.0",
     "eslint-flat-config-utils": "^0.2.4",
     "eslint-flat-config-viewer": "^0.1.20",
