@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^4.1.0
     version: 4.2.1(esbuild@0.24.0)
   eslint-flat-config-utils:
-    specifier: ^0.2.4
-    version: 0.2.5
+    specifier: ^0.4.0
+    version: 0.4.0
   eslint-flat-config-viewer:
     specifier: ^0.1.20
     version: 0.1.20(eslint@9.13.0)(typescript@5.6.3)
@@ -1187,13 +1187,6 @@ packages:
       '@types/ms': 0.7.34
     dev: false
 
-  /@types/eslint@8.56.12:
-    resolution: {integrity: sha512-03ruubjWyOHlmljCVoxSuNDdmfZDzsrrz0P2LeJsOXr+ZwFQ+0yQIwNCwt/GYhV7Z31fgtXJTAEs+FYlEL851g==}
-    dependencies:
-      '@types/estree': 1.0.6
-      '@types/json-schema': 7.0.15
-    dev: true
-
   /@types/estree@1.0.6:
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
@@ -2171,18 +2164,10 @@ packages:
       find-up-simple: 1.0.0
     dev: false
 
-  /eslint-flat-config-utils@0.2.5:
-    resolution: {integrity: sha512-iO+yLZtC/LKgACerkpvsZ6NoRVB2sxT04mOpnNcEM1aTwKy+6TsT46PUvrML4y2uVBS6I67hRCd2JiKAPaL/Uw==}
-    dependencies:
-      '@types/eslint': 8.56.12
-      pathe: 1.1.2
-    dev: true
-
   /eslint-flat-config-utils@0.4.0:
     resolution: {integrity: sha512-kfd5kQZC+BMO0YwTol6zxjKX1zAsk8JfSAopbKjKqmENTJcew+yBejuvccAg37cvOrN0Mh+DVbeyznuNWEjt4A==}
     dependencies:
       pathe: 1.1.2
-    dev: false
 
   /eslint-flat-config-viewer@0.1.20(eslint@9.13.0)(typescript@5.6.3):
     resolution: {integrity: sha512-TYYsH8k4b/P7JDaPfAMo362QaEHE4vTQh5UNrJ9/ZBzGxjpb6ESOTM1Gaij5SP+59YwY6ETJDWmaMnbi9qmLpA==}
