@@ -3,7 +3,7 @@ import type {FlatConfigComposer} from 'eslint-flat-config-utils'
 
 import antfu, {GLOB_VUE} from '@antfu/eslint-config'
 
-const ahConfig: OptionsConfig & TypedFlatConfigItem = {
+const ahConfig: OptionsConfig & Omit<TypedFlatConfigItem, 'files'> = {
     stylistic: {
         indent: 4,
         quotes: 'single',
@@ -73,11 +73,7 @@ const ahRules: TypedFlatConfigItem[] = [
             }],
 
             'no-console': ['warn', {allow: ['warn', 'error']}],
-            'max-len': ['warn', {
-                code: 160,
-                ignoreUrls: true,
-                ignorePattern: '^import .*',
-            }],
+            'max-len': ['off'],
             'curly': ['error', 'all'],
 
             'guard-for-in': 'error',
